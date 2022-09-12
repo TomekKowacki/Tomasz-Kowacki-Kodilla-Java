@@ -1,10 +1,9 @@
-package com.kodilla.testing.forum;
-import com.kodilla.testing.forumUser.SimpleUser;
+package com.kodilla.testing.forumUser;
 import org.junit.jupiter.api.*;
 
 
 @DisplayName("Forum Test Suite")
-public class ForumTestSuite {
+public class ForumUserTestSuite {
 
     @BeforeEach
     public void before() {
