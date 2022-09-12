@@ -1,6 +1,5 @@
 package com.kodilla.testing.collection;
 
-import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
@@ -37,11 +36,13 @@ public class CollectionTestSuite {
     void testOddNumbersExterminatorEmptyList() {
         //Given
         List<Integer> numbers1 = new ArrayList<>();
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         //When
+        oddNumbersExterminator.exterminate(numbers1);
+        numbers1.clear();
         if (numbers1.isEmpty()) System.out.println("testing exterminating odd numbers from empty list");
         //Then
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        oddNumbersExterminator.exterminate(numbers1);
+        Assertions.assertEquals(0, oddNumbersExterminator.evenNumbers.size());
     }
 
     @DisplayName("when the list of numbers is normal, " +
@@ -52,14 +53,18 @@ public class CollectionTestSuite {
     void testOddNumbersExterminatorNormalList() {
         //Given
         List<Integer> numbers2 = new ArrayList<>();
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         Random theGenerator = new Random();
         for (int i = 0; i < 500; i++) {
             numbers2.add(theGenerator.nextInt(1000));
         }
         //When
+        oddNumbersExterminator.exterminate(numbers2);
         if (!numbers2.isEmpty()) System.out.println("testing exterminating odd numbers from normal list");
         //Then
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        oddNumbersExterminator.exterminate(numbers2);
+        for(int i=0; i< oddNumbersExterminator.evenNumbers.size(); i++) {
+            Assertions.assertEquals(0, oddNumbersExterminator.evenNumbers.get(i) % 2);
+        }
     }
+
 }
