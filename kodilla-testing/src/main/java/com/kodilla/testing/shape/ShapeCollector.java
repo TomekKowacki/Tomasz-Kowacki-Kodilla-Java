@@ -5,35 +5,32 @@ import java.util.List;
 
 public class ShapeCollector {
 
-    private Shape shape;
-    static List<Shape> shapeList = new ArrayList<>();
-    String figure = null;
+    private List<Shape> shapeList = new ArrayList<>();
 
-    public ShapeCollector(Shape shape) {
-        this.shape = shape;
+    public List<Shape> getShapeList() {
+        return shapeList;
     }
 
-    public static void addFigure(Shape shape) {
+    public void addFigure(Shape shape) {
         shapeList.add(shape);
     }
 
-    public static void removeFigure(Shape shape) {
+    public void removeFigure(Shape shape) {
         shapeList.remove(shape);
     }
 
-    public static String getFigure(int n) {
-        String calledFigure = String.valueOf(shapeList.get(n));
-        return calledFigure;
+    public String getFigure(int n) {
+        if(n<shapeList.size() && n>=0) {
+            return String.valueOf(shapeList.get(n));
+        } else {
+            return null;
+        }
     }
 
-    public static String showFigures() {
-        String temporary = "";
-        for(int i=0; i< shapeList.size(); i++){
-           temporary = String.valueOf(shapeList.get(i));
-        }
-        return temporary;
+    public void showFigures() {
+       System.out.println(shapeList.toString());
     }
-    public static int getListSize() {
+    public int getListSize() {
         return shapeList.size();
     }
 }
