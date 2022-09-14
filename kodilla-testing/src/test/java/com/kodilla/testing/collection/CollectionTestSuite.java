@@ -60,10 +60,9 @@ public class CollectionTestSuite {
         }
         //When
         List<Integer> evenNumber = oddNumbersExterminator.exterminate(numbers2);
-        //oddNumbersExterminator.exterminate(numbers2);
         if (!numbers2.isEmpty()) System.out.println("testing exterminating odd numbers from normal list");
         //Then
-        for(int i=0; i< test.size(); i++) {
+        for(int i=0; i< evenNumber.size(); i++) {
             Assertions.assertEquals(0, evenNumber.get(i) % 2);
         }
     }
