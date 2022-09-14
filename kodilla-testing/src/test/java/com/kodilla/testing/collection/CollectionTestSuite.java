@@ -38,11 +38,11 @@ public class CollectionTestSuite {
         List<Integer> numbers1 = new ArrayList<>();
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         //When
-        oddNumbersExterminator.exterminate(numbers1);
+        List<Integer> evenNumber = oddNumbersExterminator.exterminate(numbers1);
         numbers1.clear();
         if (numbers1.isEmpty()) System.out.println("testing exterminating odd numbers from empty list");
         //Then
-        Assertions.assertEquals(0, oddNumbersExterminator.evenNumbers.size());
+        Assertions.assertEquals(0, evenNumber.size());
     }
 
     @DisplayName("when the list of numbers is normal, " +
@@ -59,11 +59,12 @@ public class CollectionTestSuite {
             numbers2.add(theGenerator.nextInt(1000));
         }
         //When
-        oddNumbersExterminator.exterminate(numbers2);
+        List<Integer> evenNumber = oddNumbersExterminator.exterminate(numbers2);
+        //oddNumbersExterminator.exterminate(numbers2);
         if (!numbers2.isEmpty()) System.out.println("testing exterminating odd numbers from normal list");
         //Then
-        for(int i=0; i< oddNumbersExterminator.evenNumbers.size(); i++) {
-            Assertions.assertEquals(0, oddNumbersExterminator.evenNumbers.get(i) % 2);
+        for(int i=0; i< test.size(); i++) {
+            Assertions.assertEquals(0, evenNumber.get(i) % 2);
         }
     }
 
