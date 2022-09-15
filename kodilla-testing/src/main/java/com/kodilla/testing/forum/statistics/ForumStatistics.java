@@ -32,7 +32,7 @@ public class ForumStatistics {
         return averageCommentsPerPost;
     }
 
-    void calculateAdvStatistics (Statistics statistics) {
+    public void calculateAdvStatistics (Statistics statistics) {
         numberOfUsers = statistics.usersNames().size();
         numberOfPosts = statistics.postsCount();
         numberOfComments = statistics.commentsCount();
@@ -55,5 +55,11 @@ public class ForumStatistics {
             averageCommentsPerUser = 0;
             numberOfComments = 0;
         }
+    }
+    public void showStatistics() {
+        System.out.println("Number of users:" + numberOfUsers + "\nNumber of posts:"
+                + numberOfPosts + "\nNumber of comments:" + numberOfComments);
+        System.out.println("Average posts per user:" + averagePostsPerUser + "\nAverage comments per user:"
+                + averageCommentsPerUser + "\nAverage comments per post:" + averageCommentsPerPost);
     }
 }
