@@ -4,24 +4,30 @@ import java.util.Scanner;
 
 public class RpsRunner {
     public static void main(String[] args) {
-        boolean end = false;
-        Scanner scanner = new Scanner(System.in);
+        Game game = new Game();
 
-        SystemMessages.enterName();
-        String playerName = scanner.nextLine();
-        System.out.println("Hello " +playerName);
+        game.createNewPlayer();
+        game.roundsToWin();
 
-        SystemMessages.enterRounds();
-        int givenRounds = scanner.nextInt();
+        while(!game.isEnd()) {
 
-        PlayerData playerData = new PlayerData(playerName,givenRounds);
+            if(game.getGivenRounds() == game.getWinRounds()
+                    || game.getGivenRounds() == game.getLoseRounds()) {
 
-        SystemMessages.userManual();
-        SystemMessages.start();
+                game.whatToDoWhenGameEnd();
 
-        while(end){
-            SystemMessages.choose();
+            } else {
 
+                game.playerChooseMove();
+                game.computerChooseMove();
+                String result = game.compareChoices();
+                System.out.println("YOU --> " + game.getPlayerAttribute() + "  VS  "
+                        + game.getComputerAttribute() + "  <--COM");
+                System.out.println(result);
+                System.out.println(game.getPlayer().getPlayerName() + " points is: " + game.getWinRounds());
+                System.out.println("Computer points is: " + game.getLoseRounds());
+
+            }
         }
 
 
