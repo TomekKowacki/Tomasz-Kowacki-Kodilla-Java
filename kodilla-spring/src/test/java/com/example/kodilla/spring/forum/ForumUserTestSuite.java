@@ -1,0 +1,27 @@
+package com.example.kodilla.spring.forum;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
+@SpringBootTest
+public class ForumUserTestSuite {
+
+    @Test
+    void testGetUsername() {
+        //Given
+        ApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext("com.example.kodilla.spring.forum");
+        ForumUser forumUser = applicationContext.getBean(ForumUser.class);
+
+        //When
+        String name = forumUser.getUsername();
+
+        //Then
+        assertEquals("John Smith", name);
+    }
+}
