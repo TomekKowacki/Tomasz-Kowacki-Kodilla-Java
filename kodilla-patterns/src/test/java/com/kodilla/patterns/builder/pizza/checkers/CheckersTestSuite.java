@@ -1,5 +1,6 @@
 package com.kodilla.patterns.builder.pizza.checkers;
 
+import com.kodilla.patterns.builder.checkers.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

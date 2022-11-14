@@ -1,4 +1,4 @@
-package com.kodilla.patterns.builder.pizza.checkers;
+package com.kodilla.patterns.builder.checkers;
 
 public class Queen extends Figure {
 
