@@ -1,4 +1,4 @@
-package com.kodilla.patterns.builder.pizza.checkers;
+package com.kodilla.patterns.builder.checkers;
 
 import com.kodilla.patterns.builder.checkers.*;
 import org.junit.jupiter.api.Test;

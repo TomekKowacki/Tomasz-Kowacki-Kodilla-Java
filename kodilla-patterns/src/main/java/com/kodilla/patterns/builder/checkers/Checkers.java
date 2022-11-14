@@ -49,7 +49,7 @@ public class Checkers {
             if (board.getFigure(x, y) == null) {
                 board.setFigure(FigureFactory.makeFigure(figureType, figureColor), x, y);
             } else {
-                throw new IllegalStateException("Position " + x + "," + y + " is already occupied");
+                throw new IllegalStateException("Position " + x + "," + y + " is already occupied ");
             }
             return this;
         }

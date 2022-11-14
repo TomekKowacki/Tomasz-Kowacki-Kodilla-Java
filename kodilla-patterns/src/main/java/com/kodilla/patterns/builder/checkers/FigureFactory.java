@@ -11,7 +11,7 @@ public class FigureFactory {
         } else if (figureType.equals(QUEEN)) {
             return new Queen(color);
         } else {
-            throw new IllegalStateException("Type of figure should be pawn or queen");
+            throw new IllegalStateException("Type of figure should be pawn or queen ");
         }
     }
 }
