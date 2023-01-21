@@ -9,8 +9,12 @@ import java.util.List;
 @NamedNativeQuery(
         name = "Company.findNameOfCompanyByFirstThreeLetters",
         query = "SELECT * FROM companies WHERE substring(company_name,1,3) = :FIRSTTHREELETTERSOFNAMECOMPANY",
-        resultClass = Company.class
-)
+        resultClass = Company.class)
+@NamedNativeQuery(
+        name = "Company.findNameOfCompanyByAnyLetters",
+        query = "SELECT * FROM companies WHERE company_name LIKE :ANYLETTERSOFCOMPANYNAME",
+        resultClass = Company.class)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
