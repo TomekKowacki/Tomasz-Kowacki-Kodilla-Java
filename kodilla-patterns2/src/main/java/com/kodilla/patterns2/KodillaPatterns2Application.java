@@ -1,4 +1,4 @@
-package com.example.kodillapatterns2;
+package com.kodilla.patterns2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
