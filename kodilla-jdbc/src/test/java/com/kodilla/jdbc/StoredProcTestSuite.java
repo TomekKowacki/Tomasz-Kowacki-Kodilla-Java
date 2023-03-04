@@ -1,6 +1,6 @@
 package com.kodilla.jdbc;
 
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
